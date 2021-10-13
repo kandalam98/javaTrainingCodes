@@ -8,7 +8,7 @@
 <title>Donor Registration Form</title>
 </head>
 <body>
-<header>Donate and Save Lives !</header>
+<header>Register For Donotion Camp !</header>
 <div>
 <form:form action="/campRegister" modelAttribute="command2" method="post"  >
         <div>

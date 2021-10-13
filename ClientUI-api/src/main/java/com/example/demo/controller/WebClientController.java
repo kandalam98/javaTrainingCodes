@@ -56,11 +56,15 @@ public class WebClientController {
 		model.addAttribute("majHeading","Welcome Back Donor");
 		return "alreadyRegistered";
 	}
+	
+	//Sending Donor Form 
 	@GetMapping(path="/addDonor")
 	public String sendForm(Model model) {
 		model.addAttribute("command",object);
-		return "addDonor";
+		return "addDonor"; 
 	}
+	//here return statement is getting 500 error
+	
 	
 //	@GetMapping(path="/update")
 //	public String updateData(Model model,@RequestParam("search") int id ) {
@@ -68,6 +72,7 @@ public class WebClientController {
 //		return "addDonor";
 //	}
 	
+	//Adding the Donor record
 	@PostMapping(path = "/addDonor")
     public String submitForm(@ModelAttribute("command") Donor donor,BindingResult result) {
         String nextStep = "success";
@@ -86,7 +91,7 @@ public class WebClientController {
         return "redirect:/getAllDonor";
     }
 	
-	
+	//Getting All the donor List
 	@GetMapping(path = "/getAllDonor")
 	public String findAll(Model model) {
 
@@ -98,6 +103,8 @@ public class WebClientController {
 
 	}
 	
+	
+	//Search Donors of particular blood group
 	@GetMapping(path = "/searchByBloodGroup")
 	public String searchBybloodgroup(Model model,@RequestParam("search") String bloodgroup) {
 //		System.out.println(bloodgroup);
@@ -110,6 +117,7 @@ public class WebClientController {
 
 	}
 	
+	//Search Donor by particular Area Code
 	@GetMapping(path = "/searchByarea")
 	public String searchByareacode(Model model,@RequestParam("search") int  areacode) {
 
@@ -121,12 +129,15 @@ public class WebClientController {
 	return "searchBycode";
 	}
 	
+	
+	//Deleting donor record by ID
 	@DeleteMapping(path="/delete")
 	public String deleteRecord(Model model,@RequestParam("search") int id) {
 		template.delete("http://localhost:7000/api/v1/donor/delete/"+id);
-		return "success";
+		return "successfull";
 	}
 	
+	//Donors searching by Campname
 	@GetMapping(path = "/searchBycamp")
 	public String searchBycamp(Model model,@RequestParam("search") int  campname) {
 
@@ -137,7 +148,7 @@ public class WebClientController {
 	return "donorsOfcamp";
 	}
 	
-	//searchCampsByArea
+	//Search Donors Camp by areacode
 	@GetMapping(path = "/searchCampsByArea")
 	public String searchCampByAreaCode(Model model,@RequestParam("search") int  areacode) {
 
@@ -155,6 +166,8 @@ public class WebClientController {
 		return "registerForCamp";
 	}
 	
+	
+	//Posting the details into the DonorCamp Database
 	@PostMapping(path = "/campRegister")
     public String submitForm2(@ModelAttribute("command2") DonorCamp donorcamp,BindingResult result) {
         String nextStep = "success";  
@@ -167,9 +180,10 @@ public class WebClientController {
         	HttpEntity<DonorCamp> requestBody=new HttpEntity<>(donorcamp,headers);
         	template.postForObject("http://localhost:7010/api/v1/donorcamp",requestBody, DonorCamp[].class);
         }
-        return "success";
+        return "successfull";
     }
 	
+	//Get All DonorCamp List
 	@GetMapping(path = "/getAllDonorCamps")
 	public String findAllDonorCamps(Model model) {
 

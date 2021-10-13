@@ -8,7 +8,7 @@
 <title>Show All Donotion Camps</title>
 </head>
 <body>
-<header>List Of Blood Donation camps</header>
+<header>List Of All Blood Donation camps</header>
 <table>
 	<tr>
 		<th>Camp ID</th>
