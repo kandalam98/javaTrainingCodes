@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Success</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Sccuessfully UnRegistered !</h1>
-
+<h1>Registration Sucess !</h1>
 </body>
 </html>
