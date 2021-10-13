@@ -16,7 +16,7 @@
 <input type="submit">
 </form>
 <div>
-<a href="registerForCamp">Want to Register for Donation Camp ?</a>
+<a href="campRegister">Want to Register for Donation Camp ?</a>
 </div>
 <div>
 <a href="getAllDonorCamps">View All Records of Donor Camps</a>

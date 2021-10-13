@@ -149,14 +149,14 @@ public class WebClientController {
 	}
 	
 	//registering for donorcamp
-	@GetMapping(path="/registerForCamp")
+	@GetMapping(path="/campRegister")
 	public String sendForm2(Model model) {
-		model.addAttribute("command",object2);
+		model.addAttribute("command2",object2);
 		return "registerForCamp";
 	}
 	
-	@PostMapping(path = "/registerForCamp")
-    public String submitForm2(@ModelAttribute("command") DonorCamp donorcamp,BindingResult result) {
+	@PostMapping(path = "/campRegister")
+    public String submitForm2(@ModelAttribute("command2") DonorCamp donorcamp,BindingResult result) {
         String nextStep = "success";  
         if(result.hasErrors()) {
             nextStep="registerForCamp";

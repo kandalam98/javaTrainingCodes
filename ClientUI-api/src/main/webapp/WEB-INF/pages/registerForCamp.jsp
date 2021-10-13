@@ -10,7 +10,7 @@
 <body>
 <header>Donate and Save Lives !</header>
 <div>
-<form:form action="/registerForCamp" modelAttribute="command" method="post"  >
+<form:form action="/campRegister" modelAttribute="command2" method="post"  >
         <div>
             <label for="">DonorCamp ID</label>
             <form:input path="campname"/>
